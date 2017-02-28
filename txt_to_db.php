@@ -72,10 +72,12 @@ class Txt_to_db{
 	
 	
 	$insert = new Txt_to_db;
-	$data_gir = "Insert DATA";
-	$data_bul = "Select DATA";
-	$insert->insert_data("db",$data_gir,1);
-	$insert->select_data("db",$data_gir,5);
+	$data_insert = "Insert DATA";
+	$data_select = "Select DATA";
+	$insert->insert_data("db",$data_insert,1);     //IF YOU USE 1 IT MEANS IT IS UNIQUE . IF YOU MAKE 0 IT MEANS IT IS NOT UNIQUE
+	$insert->insert_data("db",$data_insert,0);     //IF YOU MAKE 0 IT MEANS IT IS NOT UNIQUE
+	$insert->select_data("db","$data_select",0);    //IF YOU WRITE 0 YOU WILL TAKE ONLY EQUAL COLUMN.
+	$insert->select_data("db","",5);     // 5 MEANS GIVE ME LAST 5 COLUMN IN ARRAY.
 
 	
 	
